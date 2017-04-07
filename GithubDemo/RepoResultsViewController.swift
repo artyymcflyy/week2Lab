@@ -48,11 +48,7 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
 
             // Print the returned repositories to the output window
             self.repos = newRepos
-//            print(self.repos)
-            for repo in newRepos {
-                print(repo)
-                //self.repos.append(repo)
-            }
+            //print(self.repos)
             self.tableView.reloadData()
 
             MBProgressHUD.hide(for: self.view, animated: true)
@@ -72,19 +68,19 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell") as! RepoCell
         let repo = repos![indexPath.row]
-        
-        let title = repo.name
-        let stars = repo.stars
-        let forks = repo.forks
-        let owner = repo.ownerHandle
-        let desc = repo.repoDescription
+//        
+//        let title = repo.name
+//        let stars = repo.stars
+//        let forks = repo.forks
+//        let owner = repo.ownerHandle
+//        let desc = repo.repoDescription
         let image = repo.ownerAvatarURL
-        
-        cell.repoTitleLabel.text = title
-        cell.starLabel.text = String(describing: stars)
-        cell.forkLabel.text = String(describing: forks)
-        cell.usernameLabel.text = owner
-        cell.descriptionLabel.text = desc
+//        
+//        cell.repoTitleLabel.text = title
+//        cell.starLabel.text = String(describing: stars)
+//        cell.forkLabel.text = String(describing: forks)
+//        cell.usernameLabel.text = owner
+//        cell.descriptionLabel.text = desc
         cell.imageView?.setImageWith(URL(string: image!)!)
         
         return cell
